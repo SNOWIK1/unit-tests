@@ -1,22 +1,5 @@
 ﻿namespace Calculations
 {
-    //public class TimeSpan
-    //{
-    //    public int time;
-    //    public string timeSpan;
-
-    //    private string convertToTimeSpan(int time)
-    //    {
-    //        return $"{time / 60}:{time % 60}";
-    //    }
-
-    //    public TimeSpan(int time)
-    //    {
-    //        this.time = time;
-    //        this.timeSpan = convertToTimeSpan(time);
-    //    }
-    //}
-
     public class Calculations
     {
         /// <summary>
@@ -32,15 +15,22 @@
         beginWorkingTime, string
         endWorkingTime, int consultationTime)
         {
+            if (consultationTime < 1)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
             if (startTimes.Length == 0 || durations.Length == 0)
             {
                 return null;
             }
 
-            if (Convert.ToInt32(startTimes[0].Split(":")[0]) < Convert.ToInt32("08:00".Split(":")))
+            if (Convert.ToInt32(startTimes[0].Split(":")[0]) < Convert.ToInt32(beginWorkingTime.Split(":")[0]) || Convert.ToInt32(startTimes[startTimes.Length - 1].Split(":")[0]) > Convert.ToInt32(endWorkingTime.Split(":")[0]))
             {
                 return null;
             }
+
+
 
             string[] result = { "08:00 - 08:30", "08:30 - 09:00", "09:00 - 09:30", "09:30 - 10:00", "11:30 - 12:00", "12:00 - 12:30", "12:30 - 13:00", "13:00 - 13:30", "13:30 - 14:00", "14:00 - 14:30", "14:30 - 15:00", "15:40 - 16:10", "16:10 - 16:40", "17:30 - 18:00" };
             return result;

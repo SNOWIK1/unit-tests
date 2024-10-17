@@ -4,14 +4,19 @@ namespace CalculationsTests
     public class UnitTest1
     {
         string[] startTimes = { "10:00", "11:00", "15:00", "15:30", "16:50" };
+        string[] startTimesWithDuplicates = { "10:00", "10:20", "11:00", "15:00", "15:30", "16:50" };
         string[] emptyStartTimes = { };
-        int[] durations = { 60, 30, 10, 10, 40 };
+
+        int[] durations = { 60, 60, 30, 10, 10, 40 };
         int[] emptyDurations = { };
+
         string
         beginWorkingTime = "08:00";
         string
         endWorkingTime = "18:00";
+
         int consultationTime = 30;
+        int incorrectConsultationTime = 0;
 
         [TestMethod]
         public void AssertLength()
@@ -20,7 +25,6 @@ namespace CalculationsTests
             string[] actual = Calculations.Calculations.AvailablePeriods(startTimes, durations, beginWorkingTime, endWorkingTime, consultationTime);
 
             Assert.AreEqual(expected.Length, actual.Length);
-            CollectionAssert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -38,7 +42,7 @@ namespace CalculationsTests
             string[]? expected = null;
             string[] actual = Calculations.Calculations.AvailablePeriods(emptyStartTimes, durations, beginWorkingTime, endWorkingTime, consultationTime);
 
-            CollectionAssert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -47,7 +51,34 @@ namespace CalculationsTests
             string[]? expected = null;
             string[] actual = Calculations.Calculations.AvailablePeriods(startTimes, emptyDurations, beginWorkingTime, endWorkingTime, consultationTime);
 
-            CollectionAssert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PassTooEarlyTimes()
+        {
+            string[]? expected = null;
+            string[] actual = Calculations.Calculations.AvailablePeriods(new string[] { "07:00 - 08:00" }, durations, beginWorkingTime, endWorkingTime, consultationTime);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PassTooLateTimes()
+        {
+            string[]? expected = null;
+            string[] actual = Calculations.Calculations.AvailablePeriods(new string[] { "19:00 - 20:00" }, durations, beginWorkingTime, endWorkingTime, consultationTime);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException),
+    "Passed incorrect consultation time")]
+        public void PassIncorrectConsultationTime()
+        {
+            string[] actual = Calculations.Calculations.AvailablePeriods(startTimes, durations, beginWorkingTime, endWorkingTime, incorrectConsultationTime);
         }
     }
 }

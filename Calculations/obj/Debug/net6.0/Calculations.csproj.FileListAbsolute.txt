@@ -10,3 +10,15 @@ C:\Users\user\source\repos\UnitTests\Calculations\obj\Debug\net6.0\Calculations.
 C:\Users\user\source\repos\UnitTests\Calculations\obj\Debug\net6.0\refint\Calculations.dll
 C:\Users\user\source\repos\UnitTests\Calculations\obj\Debug\net6.0\Calculations.pdb
 C:\Users\user\source\repos\UnitTests\Calculations\obj\Debug\net6.0\ref\Calculations.dll
+C:\Users\user\Desktop\unit-tests\Calculations\bin\Debug\net6.0\Calculations.deps.json
+C:\Users\user\Desktop\unit-tests\Calculations\bin\Debug\net6.0\Calculations.dll
+C:\Users\user\Desktop\unit-tests\Calculations\bin\Debug\net6.0\Calculations.pdb
+C:\Users\user\Desktop\unit-tests\Calculations\obj\Debug\net6.0\Calculations.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\unit-tests\Calculations\obj\Debug\net6.0\Calculations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\unit-tests\Calculations\obj\Debug\net6.0\Calculations.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\unit-tests\Calculations\obj\Debug\net6.0\Calculations.AssemblyInfo.cs
+C:\Users\user\Desktop\unit-tests\Calculations\obj\Debug\net6.0\Calculations.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\unit-tests\Calculations\obj\Debug\net6.0\Calculations.dll
+C:\Users\user\Desktop\unit-tests\Calculations\obj\Debug\net6.0\refint\Calculations.dll
+C:\Users\user\Desktop\unit-tests\Calculations\obj\Debug\net6.0\Calculations.pdb
+C:\Users\user\Desktop\unit-tests\Calculations\obj\Debug\net6.0\ref\Calculations.dll

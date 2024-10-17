@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+CtO08VDySmzrsRlWYvatn3hZCEbuYv+HNoeuU1K8mdY2TNHEsPHQkRaGs2//Za8Iga5kBloXtwXwvZrOct16w==",
+  "dgSpecHash": "X9ANKpcN5SiTaiLO40AExizaz9rw594j2GbCFYhoHj6FBUZwCaHXcfwrFr1p2NvbkuLu1tw7No3OL7TtCBW5QA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\repos\\UnitTests\\CalculationsTests\\CalculationsTests.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\unit-tests\\CalculationsTests\\CalculationsTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
