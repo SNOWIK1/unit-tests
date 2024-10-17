@@ -4,7 +4,7 @@ namespace CalculationsTests
     public class UnitTest1
     {
         string[] startTimes = { "10:00", "11:00", "15:00", "15:30", "16:50" };
-        string[] startTimesWithDuplicates = { "10:00", "10:20", "11:00", "15:00", "15:30", "16:50" };
+        string[] incorrectStartTimes = { "10:00", "10:20", "11:00", "15:00", "15:30", "16:50" };
         string[] emptyStartTimes = { };
 
         int[] durations = { 60, 60, 30, 10, 10, 40 };
@@ -79,6 +79,14 @@ namespace CalculationsTests
         public void PassIncorrectConsultationTime()
         {
             string[] actual = Calculations.Calculations.AvailablePeriods(startTimes, durations, beginWorkingTime, endWorkingTime, incorrectConsultationTime);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException),
+"Passed incorrect start time is busy")]
+        public void PassIncorrectStartTimes()
+        {
+            string[] actual = Calculations.Calculations.AvailablePeriods(incorrectStartTimes, durations, beginWorkingTime, endWorkingTime, consultationTime);
         }
     }
 }

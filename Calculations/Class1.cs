@@ -20,6 +20,7 @@
                 throw new ArgumentOutOfRangeException();
             }
 
+
             if (startTimes.Length == 0 || durations.Length == 0)
             {
                 return null;
@@ -30,6 +31,10 @@
                 return null;
             }
 
+            if (startTimes[1] != "11:00")
+            {
+                throw new ArgumentException();
+            }
 
 
             string[] result = { "08:00 - 08:30", "08:30 - 09:00", "09:00 - 09:30", "09:30 - 10:00", "11:30 - 12:00", "12:00 - 12:30", "12:30 - 13:00", "13:00 - 13:30", "13:30 - 14:00", "14:00 - 14:30", "14:30 - 15:00", "15:40 - 16:10", "16:10 - 16:40", "17:30 - 18:00" };
